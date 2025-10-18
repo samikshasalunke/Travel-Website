@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=AW-16841253217"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "AW-16841253217");
+    </script>
+    <title>TraveLove - The best flights, best hotels booking site</title>
+    <script type="module" crossorigin src="/assets/index-92b5d8d2.js"></script>
+
+
+    <link rel="stylesheet" href="/assets/index-aa705fe5.css">
+  </head>
+  <script>
+  async function loadData() {
+    const res = await fetch("http://localhost:3000/api/locations");
+    const data = await res.json();
+    console.log("Locations data:", data);
+
+    // Example: display first location name
+    const div = document.getElementById("root");
+    div.innerHTML = `<h2>Available Locations</h2><pre>${JSON.stringify(data, null, 2)}</pre>`;
+  }
+  loadData();
+</script>
+
+  <body>
+    <div id="root"></div>
+    
+  </body>
+</html>
